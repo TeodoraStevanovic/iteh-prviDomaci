@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 28, 2022 at 12:28 AM
+-- Generation Time: Jan 28, 2022 at 12:51 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.0.13
 
@@ -52,16 +52,17 @@ CREATE TABLE `projekcije` (
   `naziv` varchar(255) NOT NULL,
   `sala` varchar(255) NOT NULL,
   `trajanje` int(11) NOT NULL,
-  `datum` date NOT NULL DEFAULT current_timestamp()
+  `datum` date NOT NULL DEFAULT current_timestamp(),
+  `korisnikID` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `projekcije`
 --
 
-INSERT INTO `projekcije` (`id`, `naziv`, `sala`, `trajanje`, `datum`) VALUES
-(1, 'KLIFORD VELIKI CRVENI PAS', 'sala 1', 96, '2022-02-10'),
-(2, 'SPAJDERMEN: PUT BEZ POVRATKA', 'sala 2', 146, '2022-01-11');
+INSERT INTO `projekcije` (`id`, `naziv`, `sala`, `trajanje`, `datum`, `korisnikID`) VALUES
+(1, 'KLIFORD VELIKI CRVENI PAS', 'sala 1', 96, '2022-02-10', 1),
+(2, 'SPAJDERMEN: PUT BEZ POVRATKA', 'sala 2', 146, '2022-01-11', 3);
 
 --
 -- Indexes for dumped tables
@@ -77,7 +78,8 @@ ALTER TABLE `korisnik`
 -- Indexes for table `projekcije`
 --
 ALTER TABLE `projekcije`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `projekcije_ibfk_1` (`korisnikID`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -94,6 +96,16 @@ ALTER TABLE `korisnik`
 --
 ALTER TABLE `projekcije`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `projekcije`
+--
+ALTER TABLE `projekcije`
+  ADD CONSTRAINT `projekcije_ibfk_1` FOREIGN KEY (`korisnikID`) REFERENCES `korisnik` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
