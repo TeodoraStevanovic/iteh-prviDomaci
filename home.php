@@ -45,10 +45,10 @@ if ($podaci->num_rows == 0) {
       
         <ul class="pozadina">
         <li style="display: inline-block;line-height: 50px;">
-        <button id="btnn-prikazi">Prikazi sve projekcije</button></li>
+        <button id="btnPrikaz" >Prikazi sve projekcije</button></li>
        
         <li style="display: inline-block;line-height: 50px;" >
-        <button id="btnn-zakazivanje"type="button"  data-toggle="modal" data-target="#myModal">Zakazi novu projekciju</button></li>
+        <button id="-zakazivanje"type="button"  data-toggle="modal" data-target="#myModal">Zakazi novu projekciju</button></li>
 
        <li style="display: inline-block;line-height: 50px;" >
         <div class="col-md-4a">
@@ -94,7 +94,7 @@ if ($podaci->num_rows == 0) {
                             <td><?php echo $red["datum"] ?></td>
                             <td><?php echo $red["korisnikID"] ?></td>
                         <td>
-                                <label class="custom-radio-btnn">
+                                <label class="custom-radio-btn">
                                     <input type="radio" name="checked-donut" value=<?php echo $red["id"] ?>>
                                     <span class="checkmark"></span>
                                 </label>
@@ -113,8 +113,8 @@ if ($podaci->num_rows == 0) {
                 <ul class="pozadina"  style="margin-left:12%; margin-top: 50px; ">
                 <li style="display: inline-block;  line-height: 50px; ">
                 <div class="col-md-1" >
-                <button id="btn-izmeni"  data-toggle="modal" data-target="#izmeniModal"
-                style="background-color: bisque; width: 400px; border-radius: 5px; font-size: 25px;" >Izmeni zakazanu projekciju</button>
+                <button id="dugme-izmeni" style="background-color: bisque; width: 400px; border-radius: 5px; font-size: 25px;" 
+                 data-toggle="modal" data-target="#izmeniModal">Izmeni zakazanu projekciju</button>
             
                 </div></li> 
                 <li style="display: inline-block;   line-height: 50px;">
@@ -123,7 +123,7 @@ if ($podaci->num_rows == 0) {
                 </div></li> 
                 <li style="display: inline-block;   line-height: 50px;  ">
                 <div class="col-md-2" >
-                <button id="btnn-sortiraj" style="background-color: bisque; width: 400px; border-radius: 5px; font-size: 25px;"
+                <button id="btn-sortiraj" style="background-color: bisque; width: 400px; border-radius: 5px; font-size: 25px;"
                      onclick="sortTable()">Sortiraj po nazivu sale</button>
                 </div> 
              </li> 
@@ -170,7 +170,7 @@ if ($podaci->num_rows == 0) {
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <button id="btnnDodaj" type="submit"  style=" background-color: bisque;font-size: 20px; border-radius: 10px">Zakazi projekciju</button>
+                                        <button id="Dodaj" type="submit"  style=" background-color: bisque;font-size: 20px; border-radius: 10px">Zakazi projekciju</button>
                                     </div>
                                 </div>
                             </div>
@@ -178,7 +178,7 @@ if ($podaci->num_rows == 0) {
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btnn btnn-default" data-dismiss="modal">Zatvori</button>
+                    <button type="button" class=" -default" data-dismiss="modal">Zatvori</button>
                 </div>
             </div>
 
@@ -221,7 +221,7 @@ if ($podaci->num_rows == 0) {
                                         <input id="korisnikID" type="number" name="korisnikID"style="border: 1px solid black; width: 200px; " class="form-control" placeholder="id korisnika(1, 3 ili 5) *" value="" />
                                     </div>
                                     <div class="form-group">
-                                        <button id="btnnIzmeni" type="submit"  style=" background-color: bisque;font-size: 20px; border-radius: 10px"> Izmeni projekciju
+                                        <button id="btnIzmeni" type="submit"  style=" background-color: bisque;font-size: 20px; border-radius: 10px"> Izmeni projekciju
                                         </button>
                                     </div>
 
@@ -231,7 +231,7 @@ if ($podaci->num_rows == 0) {
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btnn btnn-default" data-dismiss="modal">Zatvori</button>
+                    <button type="button" class=" -default" data-dismiss="modal">Zatvori</button>
                 </div>
             </div>
 
