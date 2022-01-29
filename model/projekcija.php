@@ -7,7 +7,7 @@ class Projekcija{
     public $datum;
     public $korisnikID;
     
-   //konstruktor
+
     public function __construct($id=null, $naziv=null, $sala=null, $trajanje=null, $datum=null,$korisnikID=null)
     {
         $this->id = $id;
@@ -17,9 +17,8 @@ class Projekcija{
         $this->datum = $datum;
         $this->korisnikID=$korisnikID;
     }
-// slede funkcije koje ce komunicirati sa bazom 
 
-    #funkcija prikazi sve getAll- static je poziva se nad klasom Projekcija
+
     public static function getAll(mysqli $conn)
     {
         //pravimo query 
@@ -62,12 +61,33 @@ class Projekcija{
         $query = "UPDATE projekcije set naziv = $this->naziv,sala = $this->sala,trajanje = $this->trajanje,datum = $this->datum,korisnikID=$this->korisnikID WHERE id=$id";
         return $conn->query($query);
     }
-    */
 
-    public function update(mysqli $conn){
+
+    public static function update($timID, $nazivTima, $drzava, $godinaOsnivanja, $brojTitula, mysqli $conn)
+{
+    $q = "UPDATE tim set nazivTima='$nazivTima', drzava='$drzava', godinaOsnivanja='$godinaOsnivanja', brojTitula='$brojTitula' where timID=$timID";
+    return $conn->query($q);
+} 
+ public static function update($id, $naziv, $sala, $trajanje, $datum,$korisnikID, mysqli $conn)
+    {
+        $query = "UPDATE projekcije set naziv='$naziv', sala='$sala', trajanje='$trajanje', datum='$datum', korisnikID='$korisnikID' where id=$id";
+        return $conn->query($query);
+    public function update1(mysqli $conn){
         $upit = "UPDATE projekcije set naziv = $this->naziv,sala = $this->sala,trajanje = $this->trajanje,datum = $this->datum,korisnikID=$this->korisnikID WHERE id=$this->id";
         return $conn->query($upit);
+    } }
+
+    */
+    
+   
+
+  
+
+    public static function update(Projekcija $novaProjekcija, mysqli $conn) {
+        $query="UPDATE projekcije set naziv='$novaProjekcija->naziv', sala='$novaProjekcija->sala', trajanje='$novaProjekcija->trajanje', datum='$novaProjekcija->datum', korisnikID='$novaProjekcija->korisnikID' WHERE id='$novaProjekcija->id'";
+        return $conn->query($query);
     }
+
 
 
     #insert
