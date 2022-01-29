@@ -54,23 +54,26 @@ class Projekcija{
         return $conn->query($query);
     }
 
-    public function deleteAll(mysqli $conn)
-    {
-        $query = "DELETE FROM projekcije";
-        return $conn->query($query);
-    }
+ 
 
     #update
-    public function update($id, mysqli $conn)
+   /* public function update1($id, mysqli $conn)
     {
         $query = "UPDATE projekcije set naziv = $this->naziv,sala = $this->sala,trajanje = $this->trajanje,datum = $this->datum,korisnikID=$this->korisnikID WHERE id=$id";
         return $conn->query($query);
     }
+    */
+
+    public function update(mysqli $conn){
+        $upit = "UPDATE projekcije set naziv = $this->naziv,sala = $this->sala,trajanje = $this->trajanje,datum = $this->datum,korisnikID=$this->korisnikID WHERE id=$this->id";
+        return $conn->query($upit);
+    }
+
 
     #insert
     public static function add(Projekcija $Projekcija, mysqli $conn)
     {
-        $query = "INSERT INTO projekcije(naziv, sala, trajanje, datum, korisnikID) VALUES('$Projekcija->naziv','$Projekcija->sala','$Projekcija->trajanje','$Projekcija->datum''$Projekcija->korisnikID')";
+        $query = "INSERT INTO projekcije(naziv, sala, trajanje, datum, korisnikID) VALUES('$Projekcija->naziv','$Projekcija->sala','$Projekcija->trajanje','$Projekcija->datum','$Projekcija->korisnikID')";
         return $conn->query($query);
     }
 }
