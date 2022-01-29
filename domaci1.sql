@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 28, 2022 at 12:51 AM
+-- Generation Time: Jan 29, 2022 at 08:32 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.0.13
 
@@ -39,7 +39,8 @@ CREATE TABLE `korisnik` (
 
 INSERT INTO `korisnik` (`id`, `korisnickoIme`, `lozinka`) VALUES
 (1, 'admin', 'admin'),
-(3, 'radnik', 'radnik');
+(3, 'radnik', 'radnik'),
+(5, 'teodora', 'teodora');
 
 -- --------------------------------------------------------
 
@@ -61,8 +62,11 @@ CREATE TABLE `projekcije` (
 --
 
 INSERT INTO `projekcije` (`id`, `naziv`, `sala`, `trajanje`, `datum`, `korisnikID`) VALUES
-(1, 'KLIFORD VELIKI CRVENI PAS', 'sala 1', 96, '2022-02-10', 1),
-(2, 'SPAJDERMEN: PUT BEZ POVRATKA', 'sala 2', 146, '2022-01-11', 3);
+(1, 'KLIFORD VELIKI CRVENI PAS', 'sala 1', 97, '2022-02-10', 1),
+(2, 'SPAJDERMEN: PUT BEZ POVRATKA', 'sala 2', 146, '2022-01-11', 3),
+(6, 'SPAJDERMEN: PUT BEZ POVRATKA', 'sala 2', 146, '2022-02-20', 5),
+(7, 'KLIFORD VELIKI CRVENI PAS', 'sala 1', 96, '2022-02-08', 3),
+(8, 'SPAJDERMEN: PUT BEZ POVRATKA', 'sala 2', 146, '2022-02-15', 5);
 
 --
 -- Indexes for dumped tables
@@ -89,13 +93,13 @@ ALTER TABLE `projekcije`
 -- AUTO_INCREMENT for table `korisnik`
 --
 ALTER TABLE `korisnik`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `projekcije`
 --
 ALTER TABLE `projekcije`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- Constraints for dumped tables
@@ -105,7 +109,7 @@ ALTER TABLE `projekcije`
 -- Constraints for table `projekcije`
 --
 ALTER TABLE `projekcije`
-  ADD CONSTRAINT `projekcije_ibfk_1` FOREIGN KEY (`korisnikID`) REFERENCES `korisnik` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `projekcije_ibfk_1` FOREIGN KEY (`korisnikID`) REFERENCES `korisnik` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
