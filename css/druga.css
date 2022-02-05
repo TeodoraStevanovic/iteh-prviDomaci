@@ -1,52 +1,43 @@
 * {
-  
-    font-family: 'Galada';
+  font-family: "Galada";
+}
 
-  }
-
-body{
-    background-image: url("../img/movie3.jpg");
-     background-size: 100% 100%; 
-    background-repeat: no-repeat;
-    background-attachment: fixed; 
+body {
+  background-image: url("../img/movie3.jpg");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 #naslov {
-   
-    font-size: 4.5vw;
-    text-align: center;
-    color: bisque;
-    text-shadow: 5px 5px 0px rgb(218, 94, 105);
-    margin-top: 0px;
-    margin-bottom: 5px;
-  }
-.zaglavlje{
-    background-color: rgb(211, 187, 158);
-    opacity: 90%;
-    height: 100px;
+  font-size: 4.5vw;
+  text-align: center;
+  color: bisque;
+  text-shadow: 5px 5px 0px rgb(218, 94, 105);
+  margin-top: 0px;
+  margin-bottom: 5px;
+}
+.zaglavlje {
+  background-color: rgb(211, 187, 158);
+  opacity: 90%;
+  height: 100px;
   width: 90%;
   margin-left: auto;
   margin-right: auto;
-
 }
 
 .zaglavlje ul {
-    text-align: center;
-  }
+  text-align: center;
+}
 
-  .zaglavlje ul li button {
-    background-color: bisque;
-    font-size: 20px;
-    
-    border-radius: 10px;
-   padding: 15px 40px;
-  
-  
-  }
-  button:hover {
-    opacity: 0.8;
-   
-    border: rgb(145, 121, 93);
-}  
+.zaglavlje button {
+  background-color: bisque;
+  font-size: 25px;
+  border-radius: 10px;
+  padding: 15px 40px;
+  text-transform: uppercase;
+}
+button:hover {
+  opacity: 0.8;
 
-
-
+  border: rgb(145, 121, 93);
+}
