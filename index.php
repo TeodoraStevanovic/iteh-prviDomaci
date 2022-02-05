@@ -7,13 +7,16 @@ require "model/korisnik.php";
 
 session_start();
 if(isset($_POST['korisnickoIme']) && isset($_POST['lozinka'])){
-    $uname = $_POST['korisnickoIme'];
-    $upass = $_POST['lozinka'];
-
-    //kreiramo novog korisnika
-    $korisnik = new Korisnik(1, $uname, $upass);
+    $kime = $_POST['korisnickoIme'];
+    $loz = $_POST['lozinka'];
    
+    //kreiramo novog korisnika
+
+    $korisnik = new Korisnik(1, $kime, $loz);
+
     //ovde pokusavamo da ulogujemo Korisnika pozivamo staticku funkciju iz klase korisnik
+
+   
     $odg = Korisnik::logInUser($korisnik, $conn); 
 //ako je od odgovora broj redova jednako 1,odnosno ako je vracen jedan korsnik
     if($odg->num_rows==1){
@@ -23,7 +26,7 @@ if(isset($_POST['korisnickoIme']) && isset($_POST['lozinka'])){
         console.log( "Uspešno ste se prijavili");
         </script> `;
         //postavili smo sesiju koja se ovako zove 
-        $_SESSION['user_id'] = $korisnik->id;
+        $_SESSION['korisnik_id'] = $korisnik->id;
         //postavljamo lokaciju na home.php
         header('Location: home.php');
         //zelimo da izadjemo sa ove stranice 

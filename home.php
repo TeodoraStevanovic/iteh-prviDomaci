@@ -6,7 +6,7 @@ require "model/projekcija.php";
 
 session_start();
 //da li postoji zapamcena sesija koju smo postavili na index.php stranici
-if (!isset($_SESSION['user_id'])) {
+if (!isset($_SESSION['korisnik_id'])) {
     //ako nije postavljeno stavljamo da je lokacija index stranica 
     header('Location: index.php');
     exit();
@@ -124,7 +124,7 @@ if ($podaci->num_rows == 0) {
                 <li style="display: inline-block;   line-height: 50px;  ">
                 <div class="col-md-2" >
                 <button id="btn-sortiraj" style="background-color: bisque; width: 400px; border-radius: 5px; font-size: 25px;"
-                     onclick="sortTable()">Sortiraj po nazivu sale</button>
+                     onclick="sortiraj()">Sortiraj po nazivu sale</button>
                 </div> 
              </li> 
             </ul>
@@ -247,7 +247,7 @@ if ($podaci->num_rows == 0) {
     <script src="js/main.js"></script>
 
     <script>
-        function sortTable() {
+        function sortiraj() {
             var table, rows, switching, i, x, y, shouldSwitch;
             table = document.getElementById("tabela");
             switching = true;

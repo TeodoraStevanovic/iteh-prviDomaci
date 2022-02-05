@@ -1,6 +1,4 @@
 
-////
-
 $('#dodajForm').submit(function(){
     event.preventDefault();
     console.log("Dodavanje nove projekcije");
@@ -54,8 +52,8 @@ $('#btn-obrisi').click(function(){
 
 });
 
-///////////////////////////////////////////////////////////////////
-// dugme koje je na glavnoj formi i otvara dijalog za izmenu
+
+
 
 $('#dugme-izmeni').click(function () {
 
@@ -94,8 +92,7 @@ $('#dugme-izmeni').click(function () {
     });
   
   });
-  //////////////////////////////////////////
-  
+ 
   $('#izmeniForm').submit(function () {
     event.preventDefault();
     console.log("Nove vrednosti");
